@@ -66,6 +66,7 @@ Manage your sync preferences at [neetcode.io/profile/github](https://neetcode.io
 - **Status filter** — sync all submissions or accepted only
 - **Rename repository** — rename this repo or start fresh with a new one
 - **Bulk Sync** — push all past solutions at once (rate-limited)
+- -Why tf is neetcode down
 
 ---
 
