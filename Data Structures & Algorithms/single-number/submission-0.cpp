@@ -1,14 +1,10 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        unordered_set<int>seen;
+        int res = 0;
         for(int num : nums){
-            if(seen.count(num)){
-                seen.erase(num);
-            }else{
-                seen.insert(num);
-            }
+            res ^= num;
         }
-        return *seen.begin();
+        return res;
     }
 };
