@@ -13,14 +13,12 @@
 class Solution {
 public:
     bool canAttendMeetings(vector<Interval>& intervals) {
-        int n = intervals.size();
-        for (int i = 0; i < n; i++) {
-            Interval& A =intervals[i];
-            for (int j = i + 1; j < n; j++) {
-                Interval& B =intervals[j];
-                if (min(A.end, B.end) > max(A.start, B.start)) {
-                    return false;
-                }
+        sort(intervals.begin(), intervals.end(), [](auto& x, auto& y) {
+            return x.start < y.start;
+        });
+        for (int i = 1; i < intervals.size(); ++i) {
+            if (intervals[i].start < intervals[i - 1].end) {
+                return false;
             }
         }
         return true;
